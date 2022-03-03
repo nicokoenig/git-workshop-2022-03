@@ -153,9 +153,6 @@ git pull <origin> <origin-branch>
 git push -u <origin> <origin-branch>
 ```
 
-
-
-
 ## Konflikte
 
 ### Szenario
@@ -189,11 +186,39 @@ Folgende Möglichkeiten
   - Pull Request nochmal prüfen und mergen (die Änderungen übernehmen)
 
     
+## Sonstige Befehle
 
+### git stash
 
+Mit `git stash` werden die aktuellen Änderungen auf Index weggespeichert.
 
+Gut um schnell irgendwo ein Feuer zu löschen.
 
+Mit `git stash pop` werden die zuvor gestashten Änderungen wieder "geholt".
 
+> git stash kann auch benannt werden, so das man verschiedene gespeicherte Stapel hat.
+
+### git reset
+
+`git reset <commithash>` kann genutzt werden auf einen alten Commit zurückzuspringen.
+
+Alle seit dem gemachten Änderungen sind nicht verloren, sondern werden als aktuelle Änderungen angezeigt
+
+> `git reset HEAD~n`kann eingesetzt werden um n commits in zurückzusetzen, z.B. `git reset HEAD~1` geht einen Commit zurück
+
+### git tag
+
+`git tag <tageName>` kann Tags (label, releaes, markierungen) erzeugen.
+
+Diese müssen mit gepusht werden --> `git push --tags`
+
+## Git Ignore
+
+die Datei `.gitignore` kann im Root des Repositories hinterlegt werden.
+
+Diese gibt dann an, welche Dateien grundsätzlich nicht über git getracked werden sollen.
+
+https://www.atlassian.com/de/git/tutorials/saving-changes/gitignore
 
 
 
