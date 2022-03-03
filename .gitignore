@@ -1,0 +1,10 @@
+# Rekursiv
+
+# Konkrete Dateinamen
+foo.txt
+
+# ALle Dateien mit Endung ...
+*.xml
+
+# Mit ! kann eine Regel negiert werden
+!prod.xml
