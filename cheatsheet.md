@@ -156,6 +156,42 @@ git push -u <origin> <origin-branch>
 
 
 
+## Konflikte
+
+### Szenario
+
+- Wir start von `main` Branch und erzeugen neuen Feature Branch
+- Arbeiten auf Feature Branch und machen Commits
+
+> In der zwischenzeit gibt es einen neuen Commit mit Konflikt auf Eltern-Brach (`main`) auf GitHub
+
+> Die Änderungen von GitHub sind uns lokal nicht bekannt
+
+- Feature Branch wird nach GitHub gepusht
+- Auf GitHub Pull Request wird geöffnet
+
+> Pull Request weißt mich auf Konflikte hin
+
+Folgende Möglichkeiten
+1. Auflösungen des Konflikts auf GitHub in der Oberfläche
+  - Nachteil: ich kann das Gelöste nicht testen
+  
+> Außer: Die CI ist entsprechend konfiguriert
+
+2. TLDR: Pullen den Ziel-Branch lokal und mergen diesen in den Feature Branch
+  - `git checkout main` und pullen --> Alle letzten Änderungen des Main von Remote auch lokal verfügbar
+  - Wechseln zurück in den Feature Branch --> `git checkout <feature-branch>`
+  - Mergen der neuen Commits von main nach feature Branch --> `git merge main` bzw. Names des Hauptbranches
+  - Konflikt auflösen
+  - Die Dateien die Konflikte enthalten haben mit `git add` hinzufügen
+  - Merge Commit machen --> `git commit -m 'merge message'`
+  - Push des Feature Branches in Richtung GitHub
+  - Pull Request nochmal prüfen und mergen (die Änderungen übernehmen)
+
+    
+
+
+
 
 
 
